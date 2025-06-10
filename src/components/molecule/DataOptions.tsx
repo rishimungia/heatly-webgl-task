@@ -20,7 +20,7 @@ export default function DataOptions() {
     }
 
     return (
-        <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-2xl rounded-lg shadow-[0px_2px_8px_#0000008c] w-3xs max-h-1/2 overflow-clip flex flex-col gap-2">
+        <div className="bg-black/50 backdrop-blur-2xl rounded-lg shadow-[0px_2px_8px_#0000008c] w-3xs max-h-[50vh] overflow-clip flex flex-col gap-2 z-10">
             <button
                 className="text-sm font-medium px-4 py-3 cursor-pointer"
                 onClick={() => setShowMenu(!showMenu)}
