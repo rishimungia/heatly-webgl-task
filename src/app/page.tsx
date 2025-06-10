@@ -4,7 +4,7 @@ import DataRenderer from "@/components/organism/DataRenderer";
 
 export default function Home() {
     return (
-        <main className="w-full h-screen p-6 flex">
+        <main className="w-full h-screen p-[min(2.5vw,1.5rem)] flex">
             <div className="bg-white/10 rounded-2xl relative overflow-clip flex-1">
                 <div className="absolute inset-0 p-4 w-full flex items-start content-start md:justify-between gap-4 flex-wrap">
                     <GraphOptions />
