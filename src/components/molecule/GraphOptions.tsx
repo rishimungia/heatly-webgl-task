@@ -14,7 +14,7 @@ export default function GraphOptions() {
     return (
         <div className="bg-black/50 backdrop-blur-2xl rounded-lg shadow-[0px_2px_8px_#0000008c] w-3xs flex flex-col gap-2 z-10">
             <button className="text-sm font-medium px-4 py-3 cursor-pointer" onClick={() => setShowMenu(!showMenu)}>
-                Graph Options
+                View Options
             </button>
 
             <AnimatePresence>
@@ -34,7 +34,7 @@ export default function GraphOptions() {
                             htmlFor="bar-scale"
                         >
                             <div className="flex items-center justify-between gap-4">
-                                <span className="text-sm">Bar Scale</span>
+                                <span className="text-sm">Bar Thickness</span>
                                 <input
                                     type="number"
                                     value={graphOptions.barScale}

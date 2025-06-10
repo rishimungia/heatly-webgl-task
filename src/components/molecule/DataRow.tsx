@@ -5,24 +5,30 @@ export default function DataRow({
     hue,
     origin,
     data,
+    dataScaler,
+    rowKey,
     barGap,
     scale,
 }: {
     hue: number;
     origin: number;
-    data: unknown[];
+    data: number[];
+    dataScaler: number;
+    rowKey: string;
     barGap: number;
     scale: number;
 }) {
     return (
         <>
-            {data.map((box, i) => {
-                const value =
-                    typeof box === "number" ? box : parseFloat(box as string);
-                const scaledValue = value;
-
-                const brightness = 5 + ((70 - 5) * i) / (data.length - 1);
-                const saturation = 100 - (i / (data.length - 1)) * 50;
+            {data.map((value, i) => {
+                const scaledValue = value * dataScaler;
+                
+                // scale from 10% to 70%
+                const brightness = 10 + ((70 - 10) * i) / (data.length - 1);
+                
+                // scale from 100% - 10%
+                const saturation = 100 - (i / (data.length - 1)) * 10;
+                
                 const color = hslToRgb(hue, saturation, brightness);
 
                 return (
@@ -32,6 +38,10 @@ export default function DataRow({
                         height={scaledValue}
                         color={color}
                         scale={scale}
+                        hoverData={{
+                            value: value,
+                            key: rowKey
+                        }}
                     />
                 );
             })}

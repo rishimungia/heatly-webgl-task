@@ -3,7 +3,7 @@
 import useCsvData from "@/hooks/csvData";
 import { atom } from "jotai";
 
-interface AppData {
+type AppData = {
     parsedData: Record<string, number>[];
     keys: string[];
     hues: Record<string, number>;
@@ -17,7 +17,7 @@ export const appDataAtom = atom<AppData>({
     displayKeys: [],
 });
 
-interface GraphOptions {
+type GraphOptions = {
     barScale: number;
     barGap: number;
     scaleData: boolean;
@@ -30,6 +30,13 @@ export const graphOptionsAtom = atom<GraphOptions>({
     scaleData: true,
     maxBarHeight: 100
 });
+
+type ActiveBarData = {
+    key: string;
+    value: number | string;
+} | false;
+
+export const activeBarAtom = atom<ActiveBarData>(false);
 
 export default function StateProvider({
     children,

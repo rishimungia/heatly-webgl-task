@@ -1,3 +1,4 @@
+import BarInfo from "@/components/molecule/BarInfo";
 import DataOptions from "@/components/molecule/DataOptions";
 import GraphOptions from "@/components/molecule/GraphOptions";
 import DataRenderer from "@/components/organism/DataRenderer";
@@ -15,6 +16,7 @@ export default function Home() {
                 </div>
 
                 <DataRenderer />
+                <BarInfo />
             </div>
         </main>
     );
